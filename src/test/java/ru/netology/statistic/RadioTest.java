@@ -178,5 +178,14 @@ public class RadioTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void countStationTest() {
+        Radio radio = new Radio(20);
+        radio.setCurrentNumber(15);
+        int actual = radio.getCurrentNumber();
+        int expected = 15;
+        assertEquals(expected, actual);
+    }
+
 
 }
