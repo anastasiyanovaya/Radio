@@ -4,7 +4,17 @@ public class Radio {
 
     private int currentNumber; //Номер текущей радиостанции
     private int currentVolume; //Громкость звука
+    private int maxStation;
 
+    public Radio() {
+        maxStation = 9;
+
+    }
+    public Radio(int stationsCount) {
+        maxStation = stationsCount - 1;
+
+
+    }
 
     public int getCurrentNumber() {
 
@@ -38,7 +48,7 @@ public class Radio {
     }
 
     public void next() {
-        if (currentNumber < 9) {
+        if (currentNumber < maxStation) {
             currentNumber = currentNumber + 1;
         } else {
             currentNumber = 0;
@@ -56,7 +66,7 @@ public class Radio {
 
     public void setCurrentNumber(int currentNumber) {
 
-        if (currentNumber > 9) {
+        if (currentNumber > maxStation) {
             return;
         }
         if (currentNumber < 0) {
